@@ -11,11 +11,28 @@ import java.util.Date;
  * @Desc: 动态记录实体类
  */
 @Entity
-@Table(name = "my_recordinfo")
+@Table(name = "my_result")
 public class RecordInfo extends BaseEntity<Long> {
 
     // 唯一标识code
     private String code;
+
+    // 用户名
+    private String userName;
+
+    // 手机号码
+    private String phone;
+
+    // 密码
+    private String password;
+
+    // 创建时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date userCreateAt;
+
+    // 收藏code；
+    private String recordInfoCode;
 
     // 用户code
     private String userCode;
@@ -110,6 +127,46 @@ public class RecordInfo extends BaseEntity<Long> {
 
     public Integer getIsDisabled() {
         return isDisabled;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getUserCreateAt() {
+        return userCreateAt;
+    }
+
+    public void setUserCreateAt(Date userCreateAt) {
+        this.userCreateAt = userCreateAt;
+    }
+
+    public String getRecordInfoCode() {
+        return recordInfoCode;
+    }
+
+    public void setRecordInfoCode(String recordInfoCode) {
+        this.recordInfoCode = recordInfoCode;
     }
 
     public void setIsDisabled(Integer isDisabled) {
